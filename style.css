@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #f0f0f5;
+  padding: 1rem;
+}
+
+.header {
+  max-width: 600px;
+  margin: 2rem auto 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.main {
+  max-width: 500px;
+  margin: 1rem auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.register h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+.input-group {
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label,
+.input-group legend {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  box-shadow: 0 0 8px 3px #9f7aea;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.6rem;
+  cursor: pointer;
+  accent-color: #9f7aea;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #f0e6ff;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  cursor: pointer;
+}
+
+.container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  background: #9f7aea;
+  color: white;
+  padding: 14px 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(159, 122, 234, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  background-color: #7c3aed;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.7);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.popup {
+  width: 380px;
+  background: #fff;
+  border-radius: 12px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 2rem 2rem 3rem;
+  color: #333;
+  visibility: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, top 0.4s ease, visibility 0.4s;
+  z-index: 100;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.popup img {
+  width: 90px;
+  margin-top: -60px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(159, 122, 234, 0.4);
+}
+
+.popup h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 1.2rem 0 1rem;
+}
+
+.popup p {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  color: #555;
+}
+
+.popup button {
+  width: 100%;
+  padding: 12px 0;
+  background: #9f7aea;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(159, 122, 234, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+  background-color: #7c3aed;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem 1rem;
+  font-size: 0.9rem;
+  color: #ddd;
+  opacity: 0.8;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.1rem;
+  }
+
+  .popup {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
